@@ -6,7 +6,9 @@
 which xscreensaver-command || exit 1
 
 while true; do
-	pidof "$1" && \
+	if pgrep -x "kodi"
+	then
 		xscreensaver-command -deactivate &>/dev/null
+	fi
 	sleep 49
 done
